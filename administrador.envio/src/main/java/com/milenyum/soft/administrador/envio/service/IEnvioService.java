@@ -6,14 +6,14 @@ import java.util.List;
 
 public interface IEnvioService {
 
-    public void crearEnvio();
+    public void crearEnvio(Envio envio);
 
-    public void eliminarEnvio();
+    public void eliminarEnvio( Long idEnvio);
 
-    public List<Envio> listarEnvios();
+    public List<Envio> listarEnvios( );
 
-    public Envio obtenerEnvio();
+    public Envio obtenerEnvio( Long idEnvio);
 
-    public Envio actualizarEnvio();
+    public Envio actualizarEnvio( Envio envio);
 
 }
