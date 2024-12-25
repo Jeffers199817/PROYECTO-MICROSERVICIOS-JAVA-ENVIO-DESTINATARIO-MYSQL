@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.milenyum.soft</groupId>
-	<artifactId>administrador.destinario</artifactId>
+	<artifactId>destinatario</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>administrador.destinario</name>
 	<description>Demo project for Spring Boot</description>

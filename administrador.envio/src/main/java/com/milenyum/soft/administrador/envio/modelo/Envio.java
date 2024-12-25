@@ -1,13 +1,11 @@
 package com.milenyum.soft.administrador.envio.modelo;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 @ToString
@@ -24,4 +22,6 @@ public class Envio {
     private LocalDate fechaDeCreacion;
     private String estadoDeProcesamiento;
     private String descripcionDelEnvio;
+    @ElementCollection
+    private List<String> listaDestinatarios;
 }
