@@ -1,11 +1,10 @@
 package com.milenyum.soft.administrador.destinario.modelo;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 
 @Setter
 @Getter
@@ -23,5 +22,7 @@ public class Destinatario {
     private String apellido;
     private String direccion;
     private String telefono;
+    @ElementCollection
+    private List<String> listaEnvios;
 
 }
