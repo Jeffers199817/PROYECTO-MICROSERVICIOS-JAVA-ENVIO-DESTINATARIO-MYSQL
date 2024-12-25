@@ -42,4 +42,9 @@ public class DestinatarioController {
     }
 
 
+    @GetMapping("/traer/destinatario/{dni}")
+    public Destinatario getDestinatario(@PathVariable String dni) {
+        return destinatarioService.getDestinatario(dni);
+    }
+
 }

@@ -49,4 +49,10 @@ public class DestinatarioService implements IDestinatarioService {
         }
         return  null;
     }
+
+    @Override
+    public Destinatario getDestinatario(String dni) {
+
+        return  destinatarioRepository.getDestinatarioDni(dni);
+    }
 }

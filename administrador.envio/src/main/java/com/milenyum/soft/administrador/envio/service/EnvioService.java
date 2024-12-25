@@ -1,6 +1,7 @@
 package com.milenyum.soft.administrador.envio.service;
 
 import com.milenyum.soft.administrador.envio.modelo.Envio;
+import com.milenyum.soft.administrador.envio.repository.IAppConfig;
 import com.milenyum.soft.administrador.envio.repository.IEnvioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,9 +14,15 @@ public class EnvioService implements IEnvioService {
     @Autowired
     private IEnvioRepository envioRespository;
 
+    @Autowired
+    private IAppConfig appConfig;
+
 
     @Override
     public void crearEnvio(Envio envio) {
+
+        appConfig.getDestinatario(envio.getListaDestinatarios());
+
         envioRespository.save(envio);
     }
 
