@@ -24,6 +24,15 @@ public class EnvioService implements IEnvioService {
 
         List< Destinatario> listaDestinatario = appConfig.getDestinatario(envio.getListaDestinatarios());
 
+     for(Destinatario destinatario: listaDestinatario){
+         if (destinatario.getDniDestinatario() != null){
+
+             for(String dni: envio.getListaDestinatarios()){
+                 if(dni.equals(destinatario.getDniDestinatario())){
+                     envio.getDestinatarios().add(destinatario);
+                 }
+             }
+         }
 
         envioRespository.save(envio);
     }
