@@ -7,6 +7,7 @@ import com.milenyum.soft.administrador.envio.repository.IEnvioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -14,28 +15,45 @@ public class EnvioService implements IEnvioService {
 
     @Autowired
     private IEnvioRepository envioRespository;
-
     @Autowired
     private IAppConfig appConfig;
 
 
+
     @Override
-    public void crearEnvio(Envio envio) {
+    public String crearEnvio(Envio envio) {
+        List<Destinatario> listaDestinatario = appConfig.getDestinatario(envio.getListaDestinatarios());
+        List<String> noEncontrados= new ArrayList<>();
+        List<String> encontrados= new ArrayList<>();
 
-        List< Destinatario> listaDestinatario = appConfig.getDestinatario(envio.getListaDestinatarios());
+        if (listaDestinatario != null) {
 
-     for(Destinatario destinatario: listaDestinatario){
-         if (destinatario.getDniDestinatario() != null){
 
-             for(String dni: envio.getListaDestinatarios()){
-                 if(dni.equals(destinatario.getDniDestinatario())){
-                     envio.getDestinatarios().add(destinatario);
-                 }
-             }
-         }
+            for (Destinatario destinatario : listaDestinatario){
 
-        envioRespository.save(envio);
+                for (String dni : envio.getListaDestinatarios()) {
+                    if (dni.equals(destinatario.getDniDestinatario())) {
+
+                        encontrados.add(dni);
+
+                    } else {
+                        noEncontrados.add(dni);
+                    }
+                }
+            }
+
+            for(String dni: encontrados)
+            {
+                envio.getListaDestinatarios().add(dni);
+            }
+
+
+            envioRespository.save(envio);
+        }
+        return "Envio creado correctamente con: "+ encontrados.toString() +  "destinatarios no encontrados: " + noEncontrados.toString();
+
     }
+
 
     @Override
     public void eliminarEnvio(Long idEnvio) {
@@ -65,3 +83,5 @@ public class EnvioService implements IEnvioService {
 
     }
 }
+
+

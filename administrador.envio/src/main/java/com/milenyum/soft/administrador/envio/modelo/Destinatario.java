@@ -3,6 +3,7 @@ package com.milenyum.soft.administrador.envio.modelo;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 

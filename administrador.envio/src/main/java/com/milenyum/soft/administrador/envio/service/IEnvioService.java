@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IEnvioService {
 
-    public void crearEnvio(Envio envio);
+    public String crearEnvio(Envio envio);
 
     public void eliminarEnvio( Long idEnvio);
 

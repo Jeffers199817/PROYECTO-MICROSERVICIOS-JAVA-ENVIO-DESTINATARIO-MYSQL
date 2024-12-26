@@ -19,5 +19,5 @@ public interface IDestinatarioService {
     public Destinatario actualizarDestinatario( Destinatario destinatario);
 
 
-    public Destinatario getDestinatario(String dni);
+    public List<Destinatario> getDestinatario(List<String> dniLista);
 }

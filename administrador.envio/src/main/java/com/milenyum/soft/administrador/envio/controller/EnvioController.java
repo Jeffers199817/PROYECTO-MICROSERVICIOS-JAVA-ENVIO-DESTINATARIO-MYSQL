@@ -15,13 +15,13 @@ public class EnvioController {
     private IEnvioService envioService;
 
     @PostMapping("/crear")
-    public String crearEnvio(Envio envio) {
-        envioService.crearEnvio(envio);
-        return "Envio creado correctamente";
+    public String crearEnvio(@RequestBody Envio envio) {
+
+        return envioService.crearEnvio(envio);
     }
 
     @DeleteMapping("/eliminar/{idEnvio}")
-    public String eliminarEnvio(Long idEnvio) {
+    public String eliminarEnvio(@PathVariable Long idEnvio) {
         envioService.eliminarEnvio(idEnvio);
         return "Envio eliminado correctamente";
     }
@@ -30,7 +30,7 @@ public class EnvioController {
         return envioService.listarEnvios();
     }
     @GetMapping("/obtener/{idEnvio}")
-    public Envio obtenerEnvio(Long idEnvio) {
+    public Envio obtenerEnvio(@PathVariable  Long idEnvio) {
         return envioService.obtenerEnvio(idEnvio);
     }
     @PutMapping("/actualizar")

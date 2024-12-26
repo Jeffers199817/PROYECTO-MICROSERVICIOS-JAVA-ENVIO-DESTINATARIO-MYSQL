@@ -5,6 +5,7 @@ import com.milenyum.soft.administrador.destinario.repository.IDestinatarioReposi
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -51,8 +52,15 @@ public class DestinatarioService implements IDestinatarioService {
     }
 
     @Override
-    public Destinatario getDestinatario(String dni) {
+    public List<Destinatario> getDestinatario(List<String> dniLista) {
+        List<Destinatario> listaDestinatario = new ArrayList<>();
+        for(String dni : dniLista){
+           listaDestinatario.add( destinatarioRepository.getDestinatarioDni(dni));
+        }
 
-        return  destinatarioRepository.getDestinatarioDni(dni);
+
+
+
+        return listaDestinatario;
     }
 }
