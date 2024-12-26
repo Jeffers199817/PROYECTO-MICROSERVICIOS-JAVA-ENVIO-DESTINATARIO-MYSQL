@@ -1,5 +1,6 @@
 package com.milenyum.soft.administrador.envio.service;
 
+import com.milenyum.soft.administrador.envio.modelo.Destinatario;
 import com.milenyum.soft.administrador.envio.modelo.Envio;
 import com.milenyum.soft.administrador.envio.repository.IAppConfig;
 import com.milenyum.soft.administrador.envio.repository.IEnvioRepository;
@@ -21,7 +22,7 @@ public class EnvioService implements IEnvioService {
     @Override
     public void crearEnvio(Envio envio) {
 
-        appConfig.getDestinatario(envio.getListaDestinatarios());
+        List< Destinatario> listaDestinatario = appConfig.getDestinatario(envio.getListaDestinatarios());
 
 
         envioRespository.save(envio);
