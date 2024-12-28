@@ -52,4 +52,11 @@ public class DestinatarioController {
         return "Hola desde destinatario";
     }
 
+
+    @GetMapping("/saludo2")
+    public String saludo2() {
+        return "Hola desde destinatario";
+    }
+
+
 }
