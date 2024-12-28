@@ -47,4 +47,9 @@ public class DestinatarioController {
         return destinatarioService.getDestinatario(dniLista);
     }
 
+    @GetMapping("/saludo")
+    public String saludo() {
+        return "Hola desde destinatario";
+    }
+
 }
