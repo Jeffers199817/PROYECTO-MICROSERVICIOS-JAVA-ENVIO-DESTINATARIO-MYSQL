@@ -57,6 +57,7 @@ public class EnvioService implements IEnvioService {
 
     @Override
     public void eliminarEnvio(Long idEnvio) {
+        System.out.println("El sistema está eliminando el envio con id: "+idEnvio);
         envioRespository.deleteById(idEnvio);
     }
 
@@ -67,6 +68,7 @@ public class EnvioService implements IEnvioService {
 
     @Override
     public Envio obtenerEnvio(Long idEnvio) {
+        System.out.println("El sistema está buscando el envio con id: "+idEnvio);
         return envioRespository.findById(idEnvio).get();
     }
 
