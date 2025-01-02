@@ -26,6 +26,9 @@ public class EnvioService implements IEnvioService {
         List<String> noEncontrados= new ArrayList<>();
         List<String> encontrados= new ArrayList<>();
 
+
+        System.out.println("El sistema está creando un envio");
+
         if (listaDestinatario != null) {
 
 
