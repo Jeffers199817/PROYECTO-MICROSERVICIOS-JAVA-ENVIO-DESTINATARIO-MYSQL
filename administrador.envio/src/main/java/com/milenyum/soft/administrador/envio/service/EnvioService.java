@@ -82,7 +82,11 @@ public class EnvioService implements IEnvioService {
             envi.setDescripcionDelEnvio(envio.getDescripcionDelEnvio());
             envi.setEstadoDeProcesamiento(envio.getEstadoDeProcesamiento());
             envi.setFechaDeCreacion(envio.getFechaDeCreacion());
+
+            System.out.println("El sistema está actualizando el envio con id: "+envio.getIdEnvio());
             return envioRespository.save(envi);
+
+
         }
         System.out.println("El sistema falló al actualizar el envio");
         return null;
