@@ -25,6 +25,7 @@ public class EnvioService implements IEnvioService {
         List<Destinatario> listaDestinatario = appConfig.getDestinatario(envio.getListaDestinatarios());
         List<String> noEncontrados= new ArrayList<>();
         List<String> encontrados= new ArrayList<>();
+        System.out.println(     " ");
 
 
         System.out.println("El sistema está creando un envio");
@@ -52,6 +53,7 @@ public class EnvioService implements IEnvioService {
 
 
             envioRespository.save(envio);
+            System.out.println(  );
         }
         return "Envio creado correctamente con: "+ encontrados.toString() +  "destinatarios no encontrados: " + noEncontrados.toString();
 
