@@ -31,6 +31,7 @@ public class EnvioController {
     }
     @GetMapping("/obtener/{idEnvio}")
     public Envio obtenerEnvio(@PathVariable  Long idEnvio) {
+        System.out.println("Se obtuvo el sigueinte dato");
         return envioService.obtenerEnvio(idEnvio);
     }
     @PutMapping("/actualizar")
