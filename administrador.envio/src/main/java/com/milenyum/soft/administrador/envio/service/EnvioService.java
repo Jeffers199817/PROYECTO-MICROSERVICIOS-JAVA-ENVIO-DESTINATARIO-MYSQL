@@ -87,6 +87,7 @@ public class EnvioService implements IEnvioService {
         if(envi!=null){
             envi.setDescripcionDelEnvio(envio.getDescripcionDelEnvio());
             System.out.println("Lisot");
+            System.out.println("Validnado la actualización ");
             envi.setEstadoDeProcesamiento(envio.getEstadoDeProcesamiento());
             envi.setFechaDeCreacion(envio.getFechaDeCreacion());
 
