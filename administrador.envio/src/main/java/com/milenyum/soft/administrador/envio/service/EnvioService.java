@@ -68,12 +68,16 @@ public class EnvioService implements IEnvioService {
 
     @Override
     public List<Envio> listarEnvios() {
+
+        System.out.println( "");
+
         return envioRespository.findAll();
     }
 
     @Override
     public Envio obtenerEnvio(Long idEnvio) {
         System.out.println("El sistema está buscando el envio con id: "+idEnvio);
+        System.out.println();
         return envioRespository.findById(idEnvio).get();
     }
 
@@ -82,6 +86,7 @@ public class EnvioService implements IEnvioService {
         Envio envi =this.obtenerEnvio(envio.getIdEnvio());
         if(envi!=null){
             envi.setDescripcionDelEnvio(envio.getDescripcionDelEnvio());
+            System.out.println("Lisot");
             envi.setEstadoDeProcesamiento(envio.getEstadoDeProcesamiento());
             envi.setFechaDeCreacion(envio.getFechaDeCreacion());
 
