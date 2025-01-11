@@ -22,6 +22,7 @@ public class EnvioService implements IEnvioService {
 
     @Override
     public String crearEnvio(Envio envio) {
+        System.out.println("comienzo de envio");
         List<Destinatario> listaDestinatario = appConfig.getDestinatario(envio.getListaDestinatarios());
         List<String> noEncontrados= new ArrayList<>();
         List<String> encontrados= new ArrayList<>();
